@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi Photo Booth 🇸🇦</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Screen 1: Camera View -->
+        <div id="camera-screen" class="screen active">
+            <div class="header">
+                <h1>📸 Saudi Traditions Booth</h1>
+                <p>Position yourself and smile!</p>
+            </div>
+
+            <div class="camera-container">
+                <video id="camera-feed" autoplay playsinline muted></video>
+                <canvas id="photo-canvas" style="display: none;"></canvas>
+            </div>
+
+            <div class="controls">
+                <button id="capture-btn" class="btn btn-primary">
+                    <span class="btn-icon">📸</span>
+                    Capture Photo
+                </button>
+                <button id="upload-btn" class="btn btn-secondary">
+                    <span class="btn-icon">📁</span>
+                    Upload Photo
+                </button>
+                <input type="file" id="file-input" accept="image/*" style="display: none;">
+            </div>
+
+            <div id="camera-error" class="error-message" style="display: none;">
+                <p>⚠️ Camera access denied. Please allow camera permissions and refresh.</p>
+            </div>
+        </div>
+
+        <!-- Screen 2: Character Selection -->
+        <div id="character-screen" class="screen">
+            <div class="header">
+                <h1>🇸🇦 Choose Your Region</h1>
+                <p>Select a traditional attire!</p>
+            </div>
+
+            <div class="preview-container">
+                <img id="captured-preview" src="" alt="Your photo">
+            </div>
+
+            <div class="character-grid">
+                <div class="character-card" data-character="saudi_central_male">
+                    <img src="/static/characters/saudi_central_male.png?v=10" alt="Najd Region">
+                    <h3>Najd (Central)</h3>
+                </div>
+                <div class="character-card" data-character="saudi_traditional_daglah">
+                    <img src="/static/characters/saudi_traditional_daglah.png?v=10" alt="Traditional Daglah">
+                    <h3>Traditional Daglah</h3>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="retake-btn-1" class="btn btn-secondary">
+                    <span class="btn-icon">↺</span>
+                    Retake Photo
+                </button>
+            </div>
+        </div>
+
+        <!-- Screen 3: Processing -->
+        <div id="processing-screen" class="screen">
+            <div class="header">
+                <h1>✨ Creating Magic</h1>
+                <p>Transforming you into a superhero...</p>
+            </div>
+
+            <div class="loading-container">
+                <div class="spinner"></div>
+                <p class="loading-text">Please wait...</p>
+            </div>
+        </div>
+
+        <!-- Screen 4: Result -->
+        <div id="result-screen" class="screen">
+            <div class="header">
+                <h1>🎉 You're a Superhero!</h1>
+                <p>Your transformation is complete!</p>
+            </div>
+
+            <div class="result-container">
+                <img id="result-image" src="" alt="Result">
+            </div>
+
+            <div class="controls">
+                <button id="print-btn" class="btn btn-primary">
+                    <span class="btn-icon">🖨️</span>
+                    Print Photo
+                </button>
+                <button id="retake-btn-2" class="btn btn-secondary">
+                    <span class="btn-icon">↺</span>
+                    Take Another
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>
