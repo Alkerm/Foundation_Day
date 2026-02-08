@@ -8,3 +8,4 @@ cloudinary
 gunicorn
 opencv-python-headless
 numpy
+qrcode[pil]

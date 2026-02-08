@@ -280,6 +280,58 @@ def check_status(prediction_id):
         return jsonify({'error': f'Server error: {str(e)}'}), 500
 
 
+
+
+@app.route('/generate-qr', methods=['POST'])
+def generate_qr():
+    """
+    Generate QR code for the result image URL.
+    Returns QR code as base64-encoded PNG image.
+    """
+    try:
+        data = request.get_json()
+        
+        if not data or 'image_url' not in data:
+            return jsonify({'error': 'Missing image_url parameter'}), 400
+        
+        image_url = data['image_url']
+        print(f"[QR] Generating QR code for: {image_url[:50]}...", flush=True)
+        
+        # Generate QR code
+        import qrcode
+        from io import BytesIO
+        
+        qr = qrcode.QRCode(
+            version=1,
+            error_correction=qrcode.constants.ERROR_CORRECT_L,
+            box_size=10,
+            border=4,
+        )
+        qr.add_data(image_url)
+        qr.make(fit=True)
+        
+        # Create QR code image
+        img = qr.make_image(fill_color="black", back_color="white")
+        
+        # Convert to base64
+        buffer = BytesIO()
+        img.save(buffer, format='PNG')
+        buffer.seek(0)
+        qr_base64 = base64.b64encode(buffer.read()).decode('utf-8')
+        
+        print(f"[QR] QR code generated successfully", flush=True)
+        
+        return jsonify({
+            'qr_code': f'data:image/png;base64,{qr_base64}'
+        })
+        
+    except Exception as e:
+        print(f"[ERROR] QR generation failed: {str(e)}", flush=True)
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': f'QR generation failed: {str(e)}'}), 500
+
+
 @app.route('/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
@@ -288,6 +340,38 @@ def health_check():
         'cloudinary': 'configured' if os.getenv('CLOUDINARY_API_KEY') else 'not configured',
         'replicate': 'configured' if os.getenv('REPLICATE_API_TOKEN') else 'not configured'
     })
+
+
+@app.route('/test-cloudinary', methods=['GET'])
+def test_cloudinary():
+    """Detailed test of Cloudinary configuration"""
+    try:
+        import cloudinary.api
+        
+        # Check credentials (masked)
+        cloud_name = os.getenv('CLOUDINARY_CLOUD_NAME')
+        api_key = os.getenv('CLOUDINARY_API_KEY')
+        api_secret = os.getenv('CLOUDINARY_API_SECRET')
+        
+        config_report = {
+            'cloud_name': cloud_name if cloud_name else 'MISSING',
+            'api_key': f"{api_key[:4]}***" if api_key else 'MISSING',
+            'api_secret': 'ALREADY_SET' if api_secret else 'MISSING'
+        }
+        
+        # Test ping
+        try:
+            ping_result = cloudinary.api.ping()
+            ping_status = "Success"
+        except Exception as ping_err:
+            ping_status = f"Failed: {str(ping_err)}"
+            
+        return jsonify({
+            'config': config_report,
+            'ping': ping_status
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 
 if __name__ == '__main__':

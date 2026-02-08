@@ -218,6 +218,10 @@ async function performFaceSwap() {
         if (resultUrl) {
             // Display result
             resultImage.src = resultUrl;
+
+            // Generate QR code
+            generateQRCode(resultUrl);
+
             switchScreen('result');
         } else {
             throw new Error('Failed to generate result');
@@ -282,6 +286,40 @@ function updateLoadingText(text) {
     const loadingText = document.querySelector('.loading-text');
     if (loadingText) {
         loadingText.textContent = text;
+    }
+}
+
+// Generate QR code for result image
+async function generateQRCode(imageUrl) {
+    try {
+        console.log('Generating QR code for:', imageUrl);
+
+        const response = await fetch('/generate-qr', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                image_url: imageUrl
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to generate QR code');
+        }
+
+        const data = await response.json();
+        const qrCodeImg = document.getElementById('qr-code');
+
+        if (qrCodeImg && data.qr_code) {
+            qrCodeImg.src = data.qr_code;
+            qrCodeImg.style.display = 'block';
+            console.log('QR code displayed successfully');
+        }
+
+    } catch (error) {
+        console.error('QR code generation error:', error);
+        // Don't show error to user, QR is optional feature
     }
 }
 
