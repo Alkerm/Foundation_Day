@@ -6,3 +6,5 @@ python-dotenv
 replicate
 cloudinary
 gunicorn
+opencv-python-headless
+numpy
