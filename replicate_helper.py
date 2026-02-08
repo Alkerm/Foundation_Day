@@ -159,6 +159,11 @@ distorted face, cartoon, anime, exaggerated features, deformed''',
         'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing, adult, teenager, facial hair, beard, mustache',
         'template_image': 'https://res.cloudinary.com/dfcqp8igu/image/upload/v1770488439/templates/daglah_child_character.jpg'
     },
+    'sharqawi_dress_character_1770578762613': {
+        'prompt': 'Saudi Arabian woman wearing traditional Eastern Province (Sharqiyah) black dress with intricate gold embroidery, black hijab with gold trim, elegant appearance, photorealistic, professional photography, natural lighting, traditional Saudi heritage setting',
+        'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing, niqab',
+        'template_image': 'https://res.cloudinary.com/dfcqp8igu/image/upload/v1770578762/templates/sharqawi_dress_character.jpg'
+    },
 }
 
 
