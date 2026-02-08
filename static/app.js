@@ -212,7 +212,7 @@ async function performFaceSwap() {
         console.log('Prediction ID:', predictionId);
 
         // Step 2: Poll for completion
-        updateLoadingText('Creating your superhero transformation...');
+        updateLoadingText('Creating your traditional photo...');
         const resultUrl = await pollForResult(predictionId);
 
         if (resultUrl) {
@@ -261,7 +261,7 @@ async function pollForResult(predictionId, maxAttempts = 60) {
             } else if (elapsed < 20) {
                 updateLoadingText('Analyzing your face...');
             } else {
-                updateLoadingText('Almost done, creating your superhero...');
+                updateLoadingText('Almost done, creating your traditional photo...');
             }
 
             // Wait 2 seconds before next poll
