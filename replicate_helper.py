@@ -149,11 +149,6 @@ distorted face, cartoon, anime, exaggerated features, deformed''',
         'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing, old man, elderly, goatee, beard, heavy mustache',
         'template_image': 'https://res.cloudinary.com/dfcqp8igu/image/upload/v1770487272/templates/jeddah_character_updated.jpg'
     },
-    'jeddah_child_character_1770488423422': {
-        'prompt': 'Saudi Arabian boy child aged 8-12 years old wearing white bisht over black thobe, white shemagh with gold-striped agal, Jeddah cityscape background, child face, young boy, photorealistic, professional photography, natural lighting',
-        'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing, adult, teenager, facial hair, beard, mustache',
-        'template_image': 'https://res.cloudinary.com/dfcqp8igu/image/upload/v1770488423/templates/jeddah_child_character.jpg'
-    },
     'daglah_child_character_1770488439465': {
         'prompt': 'Saudi Arabian boy child aged 8-12 years old wearing traditional daglah with golden embroidery and black bandolier, white shemagh with black agal, child face, young boy, photorealistic, professional photography, natural lighting',
         'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing, adult, teenager, facial hair, beard, mustache',
@@ -163,6 +158,16 @@ distorted face, cartoon, anime, exaggerated features, deformed''',
         'prompt': 'Saudi Arabian woman wearing traditional Eastern Province (Sharqiyah) black dress with intricate gold embroidery, black hijab with gold trim, elegant appearance, photorealistic, professional photography, natural lighting, traditional Saudi heritage setting',
         'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing, niqab',
         'template_image': 'https://res.cloudinary.com/dfcqp8igu/image/upload/v1770578762/templates/sharqawi_dress_character.jpg'
+    },
+    'jeddah_character_updated_1770660835227': {
+        'prompt': 'Fit athletic Saudi Arabian man wearing traditional white bisht over black thobe, white shemagh with gold-striped agal, well-groomed full light beard with mustache, natural neutral expression, historical Saudi heritage architecture background (old Jeddah Al-Balad style), photorealistic, professional photography, natural lighting',
+        'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing, smile, goatee only, clean shaven',
+        'template_image': 'https://res.cloudinary.com/dfcqp8igu/image/upload/templates/jeddah_updated_v2.jpg'
+    },
+    'northern_woman_v1_1770658383334': {
+        'prompt': 'Saudi Arabian woman wearing traditional Northern Saudi dress with burgundy/maroon embroidered vest featuring vertical striped patterns and gold coin necklace decorations, black hijab with burgundy and gold coin headband, black waist sash, elegant appearance, photorealistic, professional photography, natural lighting, traditional Saudi heritage setting',
+        'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing, niqab',
+        'template_image': 'https://res.cloudinary.com/dfcqp8igu/image/upload/templates/northern_woman_v1.jpg'
     },
 }
 
