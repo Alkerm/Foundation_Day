@@ -139,11 +139,6 @@ distorted face, cartoon, anime, exaggerated features, deformed''',
         'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing',
         'template_image': 'https://res.cloudinary.com/dfcqp8igu/image/upload/v1770104351/templates/saudi_traditional_daglah.jpg'
     },
-    'jeddah_young_character_1770485845273': {
-        'prompt': 'Young Saudi man wearing white bisht over black thobe, white shemagh with gold-striped agal, black goatee, Jeddah cityscape background, photorealistic, professional photography, natural lighting',
-        'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing, old man, elderly',
-        'template_image': 'https://res.cloudinary.com/dfcqp8igu/image/upload/v1770486929/templates/jeddah_young_white_bisht.jpg'
-    },
     'jeddah_character_updated_1770487272655': {
         'prompt': 'Young Saudi man wearing white bisht over black thobe, white shemagh with gold-striped agal, clean-shaven face with very light mustache, Jeddah cityscape background, photorealistic, professional photography, natural lighting',
         'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing, old man, elderly, goatee, beard, heavy mustache',
