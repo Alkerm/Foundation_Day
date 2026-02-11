@@ -21,7 +21,7 @@ const retakeBtn1 = document.getElementById('retake-btn-1');
 const retakeBtn2 = document.getElementById('retake-btn-2');
 
 const resultImage = document.getElementById('result-image');
-const printBtn = document.getElementById('print-btn');
+
 
 const uploadBtn = document.getElementById('upload-btn');
 const fileInput = document.getElementById('file-input');
@@ -99,8 +99,7 @@ function setupEventListeners() {
     retakeBtn1.addEventListener('click', retakePhoto);
     retakeBtn2.addEventListener('click', retakePhoto);
 
-    // Print button
-    printBtn.addEventListener('click', printPhoto);
+
 
     // File upload
     uploadBtn.addEventListener('click', () => fileInput.click());
@@ -339,10 +338,7 @@ function retakePhoto() {
     switchScreen('camera');
 }
 
-// Print photo
-function printPhoto() {
-    window.print();
-}
+
 
 // Switch between screens
 function switchScreen(screen) {
