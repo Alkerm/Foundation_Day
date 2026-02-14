@@ -164,6 +164,16 @@ distorted face, cartoon, anime, exaggerated features, deformed''',
         'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing, niqab',
         'template_image': 'https://res.cloudinary.com/dfcqp8igu/image/upload/templates/northern_woman_v1.jpg'
     },
+    'sharqawi_girl_child': {
+        'prompt': 'Beautiful 8-12 year old Saudi Arabian girl wearing a traditional black Sharqawi dress with intricate gold embroidery and a matching sheer veil, gentle closed-mouth smile, photorealistic, cinematic lighting, traditional Saudi heritage architecture background',
+        'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing, teeth, open mouth',
+        'template_image': 'https://res.cloudinary.com/dfcqp8igu/image/upload/v1771073577/templates/sharqawi_girl_child.jpg'
+    },
+    'southern_asiri_adult': {
+        'prompt': 'Beautiful 25-32 year old Saudi Arabian woman with elegant features and fit body shape, wearing traditional Southern Saudi (Asiri) black dress with vibrant colorful geometric embroidery on the chest and sleeves, yellow headscarf, large ornate golden coin bib necklace, gentle closed-mouth smile, photorealistic, cinematic lighting, historical Saudi courtyard background',
+        'negative_prompt': 'cartoon, drawing, anime, low quality, modern clothing, western clothing, teeth, open mouth, overweight, bulky',
+        'template_image': 'https://res.cloudinary.com/dfcqp8igu/image/upload/v1771073578/templates/southern_asiri_adult.jpg'
+    },
 }
 
 
